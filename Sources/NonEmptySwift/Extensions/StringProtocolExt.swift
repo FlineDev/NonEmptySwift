@@ -1,7 +1,7 @@
 import Foundation
 import NonEmpty
 
-extension String {
+extension StringProtocol {
   /// Returns a collection that guarantees to not be empty.
   /// /// - Parameter separator: The separator to separate the String by.
   /// - Returns: A collection that guarantees to not be empty.

@@ -2,7 +2,7 @@ import XCTest
 import NonEmpty
 @testable import NonEmptySwift
 
-final class StringExtTests: XCTestCase {
+final class StringProtocolExtTests: XCTestCase {
   func componentsSeparatedByStringProtocol() {
     var text: String = "Ginevra,Harry,Hermione,Ronald"
     var nonEmptyComponents: NonEmpty<[String]> = text.components(separatedBy: ",")
