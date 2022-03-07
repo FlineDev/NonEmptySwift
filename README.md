@@ -5,8 +5,15 @@ Swift Standard Library/Foundation APIs with compile-time guarantee of non-empty 
 
 ## Usage
 
-TODO
+### `String.components(separatedBy:)`
 
+The `Foundation` method `components(separatedBy:)` is actually guaranteed to not be empty, because even if you call it on an empty `String`, you get `[""]` as a result. And if you pass a separator to it that doesn't exist on the `String`, you'll get back the string itself as the only element in the `Array`. This library makes that guarantee explicit by returning the result wrapped in `NonEmpty`. 
+
+```swift
+var text: String = "Ginevra,Harry,Hermione,Ronald"
+var nonEmptyComponents: NonEmpty<[String]> = text.components(separatedBy: ",")
+// => ["Ginevra", "Harry", "Hermione", "Ronald"]
+```
 
 ## Donation
 
